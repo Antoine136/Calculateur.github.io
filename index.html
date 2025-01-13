@@ -74,14 +74,15 @@
                 alert("Veuillez entrer un entier positif.");
                 return;
             }	
-            const percentageIncrease = (x * 100) / 200000;
-            const carConsumption = x * 100;
-            const recoveryKWh = x * 3000;
-            const homes = recoveryKWh / 1000;
+            const percentageIncrease = (x * 100) / 202 530;
+            const carConsumption = x * 1971;
+            const recoveryKWh = x * 555;
+            const homes = recoveryKWh / 5000;
             const cost = recoveryKWh * 0.29;
 
             document.getElementById('carResult').innerHTML = `
-                <p>Cela représente une augmentation de <strong>${percentageIncrease.toFixed(2)}%</strong> du parc suisse de voitures électriques.</p>
+                <p>Pour une année cela représente :</p>
+		<p>Une augmentation de <strong>${percentageIncrease.toFixed(2)}%</strong> du parc suisse de voitures électriques.</p>
                 <p>Consommation en kWh : <strong>${formatNumber(carConsumption.toFixed(2))} kWh</strong></p>
                 <p>Récupération en kWh : <strong>${formatNumber(recoveryKWh.toFixed(2))} kWh</strong></p>
                 <p>Nombre de foyers alimentés : <strong>${formatNumber(homes.toFixed(2))}</strong></p>
@@ -94,14 +95,15 @@
                 alert("Veuillez entrer un entier positif.");
                 return;
             }	
-            const percentageIncrease = (x * 100) / 200000;
-            const busConsumption = x * 100;
-            const recoveryKWh = x * 3000;
-            const homes = recoveryKWh / 1000;
+            const percentageIncrease = (x * 100) / 600;
+            const busConsumption = x * 135;
+            const recoveryKWh = 57.86;
+            const homes = recoveryKWh / 5000;
             const cost = recoveryKWh * 0.29;
 
             document.getElementById('busResult').innerHTML = `
-                <p>Cela représente une augmentation de <strong>${percentageIncrease.toFixed(2)}%</strong> du parc suisse de bus électriques.</p>
+                <p>Pour une année cela représente :</p>
+		<p>Une augmentation de <strong>${percentageIncrease.toFixed(2)}%</strong> du parc suisse de bus électriques.</p>
                 <p>Consommation en kWh : <strong>${formatNumber(busConsumption.toFixed(2))} kWh</strong></p>
                 <p>Récupération en kWh : <strong>${formatNumber(recoveryKWh.toFixed(2))} kWh</strong></p>
                 <p>Nombre de foyers alimentés : <strong>${formatNumber(homes.toFixed(2))}</strong></p>
@@ -114,14 +116,15 @@
                 alert("Veuillez entrer un entier positif.");
                 return;
             }	
-            const percentageIncrease = (x * 100) / 200000;
-            const trainConsumption = x * 100;
-            const recoveryKWh = x * 3000;
-            const homes = recoveryKWh / 1000;
+            const percentageIncrease = (x * 100) / 1298;
+            const trainConsumption = x * 1278;
+            const recoveryKWh = x * 102;
+            const homes = recoveryKWh / 5000;
             const cost = recoveryKWh * 0.29;
 
             document.getElementById('TrainResult').innerHTML = `
-                <p>Cela représente une augmentation de <strong>${percentageIncrease.toFixed(2)}%</strong> du parc suisse de train.</p>
+                <p>Pour une année cela représente :</p>
+		<p>Une augmentation de <strong>${percentageIncrease.toFixed(2)}%</strong> du parc suisse de train.</p>
                 <p>Consommation en kWh : <strong>${formatNumber(trainConsumption.toFixed(2))} kWh</strong></p>
                 <p>Récupération en kWh : <strong>${formatNumber(recoveryKWh.toFixed(2))} kWh</strong></p>
                 <p>Nombre de foyers alimentés : <strong>${formatNumber(homes.toFixed(2))}</strong></p>
@@ -141,8 +144,9 @@
 
     <div id="carPage" class="page hidden">
         <h2>Voiture</h2>
-        <p>Une voiture électrique consomme en moyenne asghdjrje et récupère en moyenne asghdjrje %.</p>
-        <p>Combien de véhicules voulez-vous calculer ?</p>
+        <p>Une voiture électrique consomme en moyenne 18 kWh pour cent kilomètres et en récupère en moyenne 22%.</p>
+	<p>En Suisse il y a actuellement 202'530 voitures éléctriques.</p>
+        <p>Combien de véhicules voulez-vous ajouter ?</p>
         <input type="number" id="carCount" min="1" placeholder="Entrez un nombre...">
         <button onclick="calculatecar()">Calculer</button>
         <div id="carResult"></div>
@@ -151,8 +155,9 @@
 
     <div id="busPage" class="page hidden">
         <h2>Bus</h2>
-		<p>Un bus consomme en moyenne asghdjrje et récupère en moyenne asghdjrje %.</p>
-        <p>Combien de véhicules voulez-vous calculer ?</p>
+	<p>Un bus consomme en moyenne 135 kWh pour cent kilomètres et en récupère en moyenne 30%.</p>
+	<p>En Suisse il y a actuellement 600 bus éléctriques.</p>
+        <p>Combien de véhicules voulez-vous ajouter ?</p>
         <input type="number" id="busCount" min="1" placeholder="Entrez un nombre...">
         <button onclick="calculatebus()">Calculer</button>
         <div id="busResult"></div>
@@ -161,8 +166,9 @@
 
     <div id="trainPage" class="page hidden">
         <h2>Train</h2>
-		<p>Un train électrique consomme en moyenne asghdjrje et récupère en moyenne asghdjrje %.</p>
-        <p>Combien de véhicules voulez-vous calculer ?</p>
+	<p>Un train électrique consomme en moyenne 1046 kWh pour cent kilomètres et en récupère en moyenne 8%.</p>
+	<p>En Suisse il y a actuellement 1298 trains, tous éléctriques.</p>
+        <p>Combien de véhicules voulez-vous ajouter ?</p>
         <input type="number" id="trainCount" min="1" placeholder="Entrez un nombre...">
         <button onclick="calculatetrain()">Calculer</button>
         <div id="TrainResult"></div>
