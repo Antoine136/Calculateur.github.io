@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Récupération d'Énergie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #0056b3;
+            text-align: center;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 10px 0;
+            text-align: center;
+        }
+        button {
+            display: block;
+            width: 90%;
+            margin: 10px auto;
+            padding: 15px;
+            font-size: 1.2rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input {
+            display: block;
+            width: 90%;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #result {
+            margin: 20px auto;
+            padding: 15px;
+            width: 90%;
+            background-color: #e9ecef;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+        }
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.add('hidden'));
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+
+        function calculatecar() {
+            const x = parseInt(document.getElementById('carCount').value);
+            if (isNaN(x) || x <= 0) {
+                alert("Veuillez entrer un entier positif.");
+                return;
+            }   
+            const percentageIncrease = (x * 100) / 202530; // Replaced non-breaking space
+            const carConsumption = x * 1971;
+            const recoveryKWh = x * 555;
+            const homes = recoveryKWh / 5000;
+            const cost = recoveryKWh * 0.29;
+
+            document.getElementById('carResult').innerHTML = `
+                <p>Pour une année cela représente :</p>
+                <p>Une augmentation de <strong>${percentageIncrease.toFixed(2)}%</strong> du parc suisse de voitures électriques.</p>
+                <p>Consommation en kWh : <strong>${formatNumber(carConsumption.toFixed(2))} kWh</strong></p>
+                <p>Récupération en kWh : <strong>${formatNumber(recoveryKWh.toFixed(2))} kWh</strong></p>
+                <p>Nombre de foyers alimentés par la récupération : <strong>${formatNumber(homes.toFixed(2))}</strong></p>
+                <p>Économie en CHF : <strong>${formatNumber(cost.toFixed(2))} CHF</strong></p>
+            `;
+        }
+
+        function calculatebus() {
+            const x = parseInt(document.getElementById('busCount').value);
+            if (isNaN(x) || x <= 0) {
+                alert("Veuillez entrer un entier positif.");
+                return;
+            }   
+            const percentageIncrease = (x * 100) / 600;
+            const busConsumption = x * 115445;
+            const recoveryKWh = x * 34634;
+            const homes = recoveryKWh / 5000;
+            const cost = recoveryKWh * 0.29;
+
+            document.getElementById('busResult').innerHTML = `
+                <p>Pour une année cela représente :</p>
+                <p>Une augmentation de <strong>${percentageIncrease.toFixed(2)}%</strong> du parc suisse de bus électriques.</p>
+                <p>Consommation en kWh : <strong>${formatNumber(busConsumption.toFixed(2))} kWh</strong></p>
+                <p>Récupération en kWh : <strong>${formatNumber(recoveryKWh.toFixed(2))} kWh</strong></p>
+                <p>Nombre de foyers alimentés par la récupération : <strong>${formatNumber(homes.toFixed(2))}</strong></p>
+                <p>Économie en CHF : <strong>${formatNumber(cost.toFixed(2))} CHF</strong></p>
+            `;
+        }
+
+        function calculatetrain() {
+            const x = parseInt(document.getElementById('trainCount').value);
+            if (isNaN(x) || x <= 0) {
+                alert("Veuillez entrer un entier positif.");
+                return;
+            }   
+            const percentageIncrease = (x * 100) / 1298;
+            const trainConsumption = x * 1278;
+            const recoveryKWh = x * 102;
+            const homes = recoveryKWh / 5000;
+            const cost = recoveryKWh * 0.29;
+
+            document.getElementById('TrainResult').innerHTML = `
+                <p>Pour une année cela représente :</p>
+                <p>Une augmentation de <strong>${percentageIncrease.toFixed(2)}%</strong> du parc suisse de train.</p>
+                <p>Consommation en kWh : <strong>${formatNumber(trainConsumption.toFixed(2))} kWh</strong></p>
+                <p>Récupération en kWh : <strong>${formatNumber(recoveryKWh.toFixed(2))} kWh</strong></p>
+                <p>Nombre de foyers alimentés par la récupération : <strong>${formatNumber(homes.toFixed(2))}</strong></p>
+                <p>Économie en CHF : <strong>${formatNumber(cost.toFixed(2))} CHF</strong></p>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <div id="basePage" class="page">
+        <h1>Bonjour, bienvenue dans le calculateur de récupération d'énergie.</h1>
+        <p>Choisissez le moyen de transport que vous voulez :</p>
+        <button onclick="showPage('carPage')">Voiture</button>
+        <button onclick="showPage('busPage')">Bus</button>
+        <button onclick="showPage('trainPage')">Train</button>
+    </div>
+
+    <div id="carPage" class="page hidden">
+        <h2>Voiture</h2>
+        <p>Une voiture électrique consomme en moyenne 18 kWh pour cent kilomètres et en récupère en moyenne 22%.</p>
+        <p>En Suisse il y a actuellement 202'530 voitures éléctriques.</p>
+        <p>Combien de véhicules voulez-vous ajouter ?</p>
+        <input type="number" id="carCount" min="1" placeholder="Entrez un nombre...">
+        <button onclick="calculatecar()">Calculer</button>
+        <div id="carResult"></div>
+        <button onclick="showPage('basePage')">Retour</button>
+    </div>
+
+    <div id="busPage" class="page hidden">
+        <h2>Bus</h2>
+        <p>Un bus consomme en moyenne 135 kWh pour cent kilomètres et en récupère en moyenne 30%.</p>
+        <p>En Suisse il y a actuellement 600 bus éléctriques.</p>
+        <p>Combien de véhicules voulez-vous ajouter ?</p>
+        <input type="number" id="busCount" min="1" placeholder="Entrez un nombre...">
+        <button onclick="calculatebus()">Calculer</button>
+        <div id="busResult"></div>
+        <button onclick="showPage('basePage')">Retour</button>
+    </div>
+
+    <div id="trainPage" class="page hidden">
+        <h2>Train</h2>
+        <p>Un train électrique consomme en moyenne 1046 kWh pour cent kilomètres et en récupère en moyenne 8%.</p>
+        <p>En Suisse il y a actuellement 1298 trains, tous éléctriques.</p>
+        <p>Combien de véhicules voulez-vous ajouter ?</p>
+        <input type="number" id="trainCount" min="1" placeholder="Entrez un nombre...">
+        <button onclick="calculatetrain()">Calculer</button>
+        <div id="TrainResult"></div>
+        <button onclick="showPage('basePage')">Retour</button>
+    </div>
+</body>
+</html>
